@@ -18,6 +18,8 @@ for (i in 1:length(split_characters)) {
 
 if (!is.null(first_unique_char)) {
   cat("The first unique character is '", first_unique_char, "' at index", first_unique_index, "\n")
+  return (first_unique_char)
 } else {
   cat("No unique character found in the string.\n")
+  return (-1)
 }
