@@ -1,0 +1,23 @@
+split_characters <- strsplit(s, "")[[1]]
+
+# Create a frequency table to count the occurrences of each character
+cnt <- table(split_characters)
+
+# Find the first unique character and its index
+first_unique_char <- NULL
+first_unique_index <- NULL
+
+for (i in 1:length(split_characters)) {
+  char <- split_characters[i]
+  if (cnt[char] == 1) {
+    first_unique_char <- char
+    first_unique_index <- i
+    break  # Exit the loop after finding the first unique character
+  }
+}
+
+if (!is.null(first_unique_char)) {
+  cat("The first unique character is '", first_unique_char, "' at index", first_unique_index, "\n")
+} else {
+  cat("No unique character found in the string.\n")
+}
